@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости услуги</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем JavaScript файл -->
+    <script src="my.js" defer></script>
+  </head>
+  <body>
+    <!-- Заголовок калькулятора -->
+    <h1>Калькулятор стоимости услуги</h1>
+    
+    <!-- Блок для отображения итоговой цены -->
+    <div id="prodPrice" class="price-display">Выберите тип услуги</div>
+    
+    <!-- Основная форма калькулятора -->
+    <form id="calculatorForm">
+      <!-- Поле для ввода количества -->
+      <div class="form-group">
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
+        <small>Введите количество от 1 до 100</small>
+      </div>
+      
+      <!-- Выбор типа услуги через радиокнопки -->
+      <div class="form-group">
+        <label>Тип услуги:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="prodType" value="1" checked> Базовая услуга</label>
+          <label><input type="radio" name="prodType" value="2"> Расширенная услуга</label>
+          <label><input type="radio" name="prodType" value="3"> Премиум услуга</label>
+        </div>
+      </div>
+      
+      <!-- Селект для опций товара (появляется только для 2-го типа) -->
+      <div class="form-group" id="selectOptions" style="display: none;">
+        <label for="prodOptions">Опции услуги:</label>
+        <select name="prodOptions" id="prodOptions">
+          <option value="option1">Стандартная опция</option>
+          <option value="option2">Расширенная опция (+10%)</option>
+          <option value="option3">Профессиональная опция (+15%)</option>
+        </select>
+      </div>
+      
+      <!-- Чекбокс для свойств товара (появляется только для 3-го типа) -->
+      <div class="form-group" id="checkboxProperties" style="display: none;">
+        <label>Дополнительные свойства:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="prop1" value="prop1"> Приоритетное обслуживание (+5%)</label>
+          <label><input type="checkbox" name="prop2" value="prop2"> Срочное выполнение (+10%)</label>
+        </div>
+      </div>
+    </form>
+    
+    <!-- Информационный блок -->
+    <div class="info">
+      <h3>Как работает калькулятор:</h3>
+      <ul>
+        <li><strong>Базовая услуга</strong> - только количество, без доп. опций</li>
+        <li><strong>Расширенная услуга</strong> - доступны опции через выпадающий список</li>
+        <li><strong>Премиум услуга</strong> - доступны дополнительные свойства через чекбоксы</li>
+      </ul>
+    </div>
+  </body>
+</html>
