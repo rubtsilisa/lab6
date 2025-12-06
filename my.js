@@ -200,9 +200,3 @@ function validateQuantity(input) {
     input.value = 100;
   }
 }
-
-// Экспорт функций для тестирования (если нужно)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { updatePrice, getPrices, validateQuantity };
-
-}
