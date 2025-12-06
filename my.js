@@ -186,17 +186,3 @@ window.addEventListener('DOMContentLoaded', function (event) {
   
   console.log("Калькулятор инициализирован успешно!");
 });
-
-/**
- * ДОПОЛНИТЕЛЬНАЯ ФУНКЦИОНАЛЬНОСТЬ ДЛЯ ВАЛИДАЦИИ
- */
-
-// Функция для валидации ввода количества
-function validateQuantity(input) {
-  let value = parseInt(input.value);
-  if (isNaN(value) || value < 1) {
-    input.value = 1;
-  } else if (value > 100) {
-    input.value = 100;
-  }
-}
